@@ -10,6 +10,7 @@
 		C9362F3E2227D6BA002A04A5 /* AlbumSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9362F342227D6BA002A04A5 /* AlbumSDK.framework */; };
 		C9362F432227D6BA002A04A5 /* AlbumSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9362F422227D6BA002A04A5 /* AlbumSDKTests.swift */; };
 		C9362F452227D6BA002A04A5 /* AlbumSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = C9362F372227D6BA002A04A5 /* AlbumSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C9362FBA2227DC2B002A04A5 /* AlbumService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9362FB92227DC2B002A04A5 /* AlbumService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		C9362F3D2227D6BA002A04A5 /* AlbumSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlbumSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9362F422227D6BA002A04A5 /* AlbumSDKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumSDKTests.swift; sourceTree = "<group>"; };
 		C9362F442227D6BA002A04A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9362FB92227DC2B002A04A5 /* AlbumService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,8 @@
 		C9362F362227D6BA002A04A5 /* AlbumSDK */ = {
 			isa = PBXGroup;
 			children = (
+				C9362FB82227DC05002A04A5 /* Networking */,
+				C9362FB72227DBFA002A04A5 /* Models */,
 				C9362F372227D6BA002A04A5 /* AlbumSDK.h */,
 				C9362F382227D6BA002A04A5 /* Info.plist */,
 			);
@@ -84,6 +88,21 @@
 				C9362F442227D6BA002A04A5 /* Info.plist */,
 			);
 			path = AlbumSDKTests;
+			sourceTree = "<group>";
+		};
+		C9362FB72227DBFA002A04A5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C9362FB82227DC05002A04A5 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				C9362FB92227DC2B002A04A5 /* AlbumService.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +167,7 @@
 				TargetAttributes = {
 					C9362F332227D6BA002A04A5 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 					C9362F3C2227D6BA002A04A5 = {
 						CreatedOnToolsVersion = 10.1;
@@ -194,6 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9362FBA2227DC2B002A04A5 /* AlbumService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +362,7 @@
 		C9362F492227D6BA002A04A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
@@ -359,6 +381,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -367,6 +390,7 @@
 		C9362F4A2227D6BA002A04A5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
@@ -393,6 +417,7 @@
 		C9362F4C2227D6BA002A04A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = AlbumSDKTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -410,6 +435,7 @@
 		C9362F4D2227D6BA002A04A5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = AlbumSDKTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
