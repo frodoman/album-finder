@@ -13,6 +13,15 @@
 		C9362F432227D6BA002A04A5 /* AlbumSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9362F422227D6BA002A04A5 /* AlbumSDKTests.swift */; };
 		C9362F452227D6BA002A04A5 /* AlbumSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = C9362F372227D6BA002A04A5 /* AlbumSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9362FBA2227DC2B002A04A5 /* AlbumService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9362FB92227DC2B002A04A5 /* AlbumService.swift */; };
+		C9362FBF22297AAB002A04A5 /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9362FBE22297AAB002A04A5 /* NetworkSession.swift */; };
+		C9362FC122297B5A002A04A5 /* ResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9362FC022297B5A002A04A5 /* ResponseHandler.swift */; };
+		C9362FC322297D57002A04A5 /* AlbumSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9362FC222297D57002A04A5 /* AlbumSearchResponse.swift */; };
+		C9362FC522299092002A04A5 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9362FC422299092002A04A5 /* NetworkClient.swift */; };
+		C9362FC7222990DD002A04A5 /* DefaultNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9362FC6222990DD002A04A5 /* DefaultNetworkClient.swift */; };
+		C9362FC922299755002A04A5 /* MockNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9362FC822299755002A04A5 /* MockNetworkClient.swift */; };
+		C9362FCE22299920002A04A5 /* AlbumService_Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9362FCD22299920002A04A5 /* AlbumService_Test.swift */; };
+		C9362FD122299B03002A04A5 /* Bundle+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9362FD022299B03002A04A5 /* Bundle+Common.swift */; };
+		C9362FD222299C66002A04A5 /* search-result-response-hello-normal.json in Resources */ = {isa = PBXBuildFile; fileRef = C9362FCB222998CE002A04A5 /* search-result-response-hello-normal.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +44,15 @@
 		C9362F422227D6BA002A04A5 /* AlbumSDKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumSDKTests.swift; sourceTree = "<group>"; };
 		C9362F442227D6BA002A04A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9362FB92227DC2B002A04A5 /* AlbumService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumService.swift; sourceTree = "<group>"; };
+		C9362FBE22297AAB002A04A5 /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
+		C9362FC022297B5A002A04A5 /* ResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseHandler.swift; sourceTree = "<group>"; };
+		C9362FC222297D57002A04A5 /* AlbumSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumSearchResponse.swift; sourceTree = "<group>"; };
+		C9362FC422299092002A04A5 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		C9362FC6222990DD002A04A5 /* DefaultNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultNetworkClient.swift; sourceTree = "<group>"; };
+		C9362FC822299755002A04A5 /* MockNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkClient.swift; sourceTree = "<group>"; };
+		C9362FCB222998CE002A04A5 /* search-result-response-hello-normal.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "search-result-response-hello-normal.json"; sourceTree = "<group>"; };
+		C9362FCD22299920002A04A5 /* AlbumService_Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumService_Test.swift; sourceTree = "<group>"; };
+		C9362FD022299B03002A04A5 /* Bundle+Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Common.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +95,7 @@
 		C9362F362227D6BA002A04A5 /* AlbumSDK */ = {
 			isa = PBXGroup;
 			children = (
+				C9362FCF22299ADD002A04A5 /* Extensions */,
 				C9362FB82227DC05002A04A5 /* Networking */,
 				C9362FB72227DBFA002A04A5 /* Models */,
 				C9362F372227D6BA002A04A5 /* AlbumSDK.h */,
@@ -88,8 +107,10 @@
 		C9362F412227D6BA002A04A5 /* AlbumSDKTests */ = {
 			isa = PBXGroup;
 			children = (
+				C9362FCA2229988A002A04A5 /* MockJson */,
 				C9362F422227D6BA002A04A5 /* AlbumSDKTests.swift */,
 				9ABE9AA8222896C700306DD5 /* URLFactory_Test.swift */,
+				C9362FCD22299920002A04A5 /* AlbumService_Test.swift */,
 				C9362F442227D6BA002A04A5 /* Info.plist */,
 			);
 			path = AlbumSDKTests;
@@ -98,6 +119,7 @@
 		C9362FB72227DBFA002A04A5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C9362FC222297D57002A04A5 /* AlbumSearchResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -107,8 +129,29 @@
 			children = (
 				C9362FB92227DC2B002A04A5 /* AlbumService.swift */,
 				9ABE9AA6222890DA00306DD5 /* URLFactory.swift */,
+				C9362FBE22297AAB002A04A5 /* NetworkSession.swift */,
+				C9362FC022297B5A002A04A5 /* ResponseHandler.swift */,
+				C9362FC422299092002A04A5 /* NetworkClient.swift */,
+				C9362FC6222990DD002A04A5 /* DefaultNetworkClient.swift */,
+				C9362FC822299755002A04A5 /* MockNetworkClient.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		C9362FCA2229988A002A04A5 /* MockJson */ = {
+			isa = PBXGroup;
+			children = (
+				C9362FCB222998CE002A04A5 /* search-result-response-hello-normal.json */,
+			);
+			path = MockJson;
+			sourceTree = "<group>";
+		};
+		C9362FCF22299ADD002A04A5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C9362FD022299B03002A04A5 /* Bundle+Common.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +253,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9362FD222299C66002A04A5 /* search-result-response-hello-normal.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,8 +264,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9362FBF22297AAB002A04A5 /* NetworkSession.swift in Sources */,
+				C9362FC122297B5A002A04A5 /* ResponseHandler.swift in Sources */,
+				C9362FC7222990DD002A04A5 /* DefaultNetworkClient.swift in Sources */,
+				C9362FC322297D57002A04A5 /* AlbumSearchResponse.swift in Sources */,
+				C9362FD122299B03002A04A5 /* Bundle+Common.swift in Sources */,
 				9ABE9AA7222890DA00306DD5 /* URLFactory.swift in Sources */,
+				C9362FC922299755002A04A5 /* MockNetworkClient.swift in Sources */,
 				C9362FBA2227DC2B002A04A5 /* AlbumService.swift in Sources */,
+				C9362FC522299092002A04A5 /* NetworkClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9362FCE22299920002A04A5 /* AlbumService_Test.swift in Sources */,
 				9ABE9AA9222896C700306DD5 /* URLFactory_Test.swift in Sources */,
 				C9362F432227D6BA002A04A5 /* AlbumSDKTests.swift in Sources */,
 			);
