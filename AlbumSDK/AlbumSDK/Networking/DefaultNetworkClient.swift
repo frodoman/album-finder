@@ -12,30 +12,26 @@ internal enum NetworkErrors: Error {
     case genaric
     case unexpectedResponse
     case emptyResponse
-    
 }
 
 public class DefaultNetworkClient: NetworkClient {
     
     public let session: NetworkSession
     
-    public init(session: NetworkSession = URLSession()) {
+    public init(session: NetworkSession = URLSession.shared) {
         self.session = session
     }
     
     public func makeNetworkRequest(with request: URLRequest,
                                    completion: @escaping (RequestResult<(Data)>) -> Void) {
-        session.startDataTask(with: request, completionHandler: { (data, response, error) -> Void in
+        session.startDataTask(with: request,
+                              completionHandler: { (data, response, error) -> Void in
             
             if let error = error {
                 completion(.failed(error))
                 return
             }
             
-            guard let _ = response as? HTTPURLResponse else {
-                completion(.failed(NetworkErrors.unexpectedResponse))
-                return
-            }
             
             guard let data = data else {
                 completion(.failed(NetworkErrors.emptyResponse))

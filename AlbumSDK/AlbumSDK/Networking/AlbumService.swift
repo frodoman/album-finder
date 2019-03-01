@@ -31,14 +31,20 @@ public class AlbumService: ResponseHandler {
                     completion: @escaping (RequestResult<ResponseType>) -> Void) {
         if let url = URLFactory.makeUrl(with: keywords) {
             let request = URLRequest(url: URL(string: url)!)
-            self.client.makeNetworkRequest(with: request) { (result) in
-                do {
-                    let searchResponse: RequestResult<ResponseType> = .succeed(try self.decodeResponse(response: result))
-                    completion(searchResponse)
-                }
-                catch {
-                    completion(.failed(error))
-                }
+            getSearchResult(with: request,
+                            completion: completion)
+        }
+    }
+    
+    public func getSearchResult(with request: URLRequest,
+                                completion: @escaping (RequestResult<ResponseType>) -> Void) {
+        self.client.makeNetworkRequest(with: request) { (result) in
+            do {
+                let searchResponse: RequestResult<ResponseType> = .succeed(try self.decodeResponse(response: result))
+                completion(searchResponse)
+            }
+            catch {
+                completion(.failed(error))
             }
         }
     }

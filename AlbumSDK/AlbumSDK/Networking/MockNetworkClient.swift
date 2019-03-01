@@ -10,6 +10,12 @@ import Foundation
 
 public class MockNetworkClient: NetworkClient {
     
+    private let session: MockNetworkSession
+    
+    public init(session: MockNetworkSession = MockNetworkSession()) {
+        self.session = session
+    }
+    
     public private(set) var urlRequests: [URLRequest] = []
     public var mockedResult: RequestResult<Data>?
     
