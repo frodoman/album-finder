@@ -11,13 +11,13 @@ import Foundation
 public extension Bundle {
     
     public func data(forResource resourceName: String, withExtension resourceExtension: String) -> Data? {
-        guard
-            let url = url(forResource: resourceName, withExtension: resourceExtension),
-            let data = try? Data(contentsOf: url) else {
-                return nil
+        var foundData: Data?
+        if let url = url(forResource: resourceName, withExtension: resourceExtension),
+           let data = try? Data(contentsOf: url) {
+                foundData = data
         }
         
-        return data
+        return foundData
     }
     
 }

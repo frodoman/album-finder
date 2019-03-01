@@ -23,6 +23,7 @@
 		C9362FD222299C66002A04A5 /* search-result-response-hello-normal.json in Resources */ = {isa = PBXBuildFile; fileRef = C9362FCB222998CE002A04A5 /* search-result-response-hello-normal.json */; };
 		C9362FD62229D7C6002A04A5 /* MockeNetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9362FD52229D7C6002A04A5 /* MockeNetworkSession.swift */; };
 		C9362FD72229D857002A04A5 /* MockNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9362FC822299755002A04A5 /* MockNetworkClient.swift */; };
+		C9362FD92229ED7E002A04A5 /* AlbumSearchResponse_Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9362FD82229ED7E002A04A5 /* AlbumSearchResponse_Test.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		C9362FCD22299920002A04A5 /* AlbumService_Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumService_Test.swift; sourceTree = "<group>"; };
 		C9362FD022299B03002A04A5 /* Bundle+Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Common.swift"; sourceTree = "<group>"; };
 		C9362FD52229D7C6002A04A5 /* MockeNetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockeNetworkSession.swift; sourceTree = "<group>"; };
+		C9362FD82229ED7E002A04A5 /* AlbumSearchResponse_Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumSearchResponse_Test.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				C9362F422227D6BA002A04A5 /* AlbumSDKTests.swift */,
 				9ABE9AA8222896C700306DD5 /* URLFactory_Test.swift */,
 				C9362FCD22299920002A04A5 /* AlbumService_Test.swift */,
+				C9362FD82229ED7E002A04A5 /* AlbumSearchResponse_Test.swift */,
 				C9362F442227D6BA002A04A5 /* Info.plist */,
 			);
 			path = AlbumSDKTests;
@@ -286,6 +289,7 @@
 			files = (
 				C9362FCE22299920002A04A5 /* AlbumService_Test.swift in Sources */,
 				9ABE9AA9222896C700306DD5 /* URLFactory_Test.swift in Sources */,
+				C9362FD92229ED7E002A04A5 /* AlbumSearchResponse_Test.swift in Sources */,
 				C9362F432227D6BA002A04A5 /* AlbumSDKTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

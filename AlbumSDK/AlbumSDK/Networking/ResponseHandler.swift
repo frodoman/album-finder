@@ -19,7 +19,6 @@ public protocol ResponseHandler {
     associatedtype ResponseType
     
     // MARK: Methods
-    ///   - completion: The response data as the model object or a type representing an error value.
     func decodeResponse<ResponseType: Decodable>(response: RequestResult<Data>) throws -> ResponseType
 }
 

@@ -49,6 +49,7 @@ public struct ResultDetails: Decodable {
     public var startIndex: Int = 0
     public var itemPerPage: Int = 30
     public var attr: SearchAttribute?
+    public var albummatches: AlbumMatchResult?
     
     public init(from decoder: Decoder) throws {
         let jsonData = try decoder.container(keyedBy: CodingKeys.self)
@@ -69,6 +70,8 @@ public struct ResultDetails: Decodable {
             let countPerPage = Int(perPageText) {
             itemPerPage = countPerPage
         }
+        
+        albummatches = try? jsonData.decode(AlbumMatchResult.self, forKey: .albummatches)
     }
     
 }

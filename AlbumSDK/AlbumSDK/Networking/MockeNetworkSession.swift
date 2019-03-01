@@ -15,11 +15,9 @@ public class MockNetworkSession: NSObject, NetworkSession {
     public func startDataTask(with request: URLRequest,
                               completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
         
-        guard let completionResult = completionResult else {
-            fatalError("No completion handler set")
+        if let completionResult = completionResult {
+            completionHandler(completionResult.0, completionResult.1, completionResult.2)
         }
-        
-        completionHandler(completionResult.0, completionResult.1, completionResult.2)
         
         return URLSessionDataTask()
     }
