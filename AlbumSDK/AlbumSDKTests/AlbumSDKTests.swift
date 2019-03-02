@@ -32,3 +32,13 @@ class AlbumSDKTests: XCTestCase {
     }
 
 }
+
+extension XCTestCase {
+    func url(forJsonFile fileName: String) -> URL? {
+        return Bundle(for: type(of: self).self).url(forResource: fileName, withExtension: "json")
+    }
+    
+    func data(forJsonFile fileName: String) -> Data? {
+        return Bundle(for: type(of: self).self).data(forResource: fileName, withExtension: "json")
+    }
+}

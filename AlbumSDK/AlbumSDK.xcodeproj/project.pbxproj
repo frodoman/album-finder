@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9ABE9AA7222890DA00306DD5 /* URLFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABE9AA6222890DA00306DD5 /* URLFactory.swift */; };
 		9ABE9AA9222896C700306DD5 /* URLFactory_Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABE9AA8222896C700306DD5 /* URLFactory_Test.swift */; };
+		9ABE9AAB222A9D9900306DD5 /* json-with-format-error.json in Resources */ = {isa = PBXBuildFile; fileRef = 9ABE9AAA222A9D9900306DD5 /* json-with-format-error.json */; };
 		C9362F3E2227D6BA002A04A5 /* AlbumSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9362F342227D6BA002A04A5 /* AlbumSDK.framework */; };
 		C9362F432227D6BA002A04A5 /* AlbumSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9362F422227D6BA002A04A5 /* AlbumSDKTests.swift */; };
 		C9362F452227D6BA002A04A5 /* AlbumSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = C9362F372227D6BA002A04A5 /* AlbumSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		9ABE9AA6222890DA00306DD5 /* URLFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLFactory.swift; sourceTree = "<group>"; };
 		9ABE9AA8222896C700306DD5 /* URLFactory_Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLFactory_Test.swift; sourceTree = "<group>"; };
+		9ABE9AAA222A9D9900306DD5 /* json-with-format-error.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "json-with-format-error.json"; sourceTree = "<group>"; };
 		C9362F342227D6BA002A04A5 /* AlbumSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AlbumSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9362F372227D6BA002A04A5 /* AlbumSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlbumSDK.h; sourceTree = "<group>"; };
 		C9362F382227D6BA002A04A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				C9362FCB222998CE002A04A5 /* search-result-response-hello-normal.json */,
+				9ABE9AAA222A9D9900306DD5 /* json-with-format-error.json */,
 			);
 			path = MockJson;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9362FD222299C66002A04A5 /* search-result-response-hello-normal.json in Resources */,
+				9ABE9AAB222A9D9900306DD5 /* json-with-format-error.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

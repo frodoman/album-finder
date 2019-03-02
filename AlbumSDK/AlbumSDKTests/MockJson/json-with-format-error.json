@@ -1,0 +1,4 @@
+{
+    "someKey":"this is a json file with incorrect format",
+    "anotherKey":22,
+}

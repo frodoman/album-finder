@@ -42,12 +42,11 @@ class AlbumService_Test: XCTestCase {
         
     }
     
-    func testDefaultNetworkClient() {
+    func testDefaultNetworkClientWithMockSession() {
 
         let mockSession = MockNetworkSession()
         let client = DefaultNetworkClient(session: mockSession)
         let service = AlbumService(client: client)
-
 
         if let responseData = data(forJsonFile: "search-result-response-hello-normal") {
             
@@ -64,6 +63,16 @@ class AlbumService_Test: XCTestCase {
             
             mockSession.completionResult = (nil, URLResponse(), NetworkErrors.genaric)
             service.getSearchResult(with: "one") { ( result) in
+                switch result {
+                case .failed( let error):
+                    XCTAssertNotNil(error)
+                case .succeed(let searchResponse):
+                    XCTFail("Should be nil but got: \(searchResponse)")
+                }
+            }
+            
+            mockSession.completionResult = (nil, URLResponse(), nil)
+            service.getSearchResult(with: "two") { ( result) in
                 switch result {
                 case .failed( let error):
                     XCTAssertNotNil(error)
@@ -96,17 +105,5 @@ class AlbumService_Test: XCTestCase {
             waitForExpectations(timeout: 10, handler: nil)
             
         }
-    }
-
-    func testErrorHandlers() {
-        
-    }
-    
-    func url(forJsonFile fileName: String) -> URL? {
-        return Bundle(for: type(of: self).self).url(forResource: fileName, withExtension: "json")
-    }
-    
-    func data(forJsonFile fileName: String) -> Data? {
-       return Bundle(for: type(of: self).self).data(forResource: fileName, withExtension: "json")
     }
 }
