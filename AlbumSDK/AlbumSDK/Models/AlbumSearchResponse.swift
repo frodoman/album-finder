@@ -101,7 +101,7 @@ public struct AlbumImage: Decodable {
         case size
     }
     
-    public let text: String
+    public let text: String?
     public let size: AlbumImageSize
     
     public init(from decoder: Decoder) throws {

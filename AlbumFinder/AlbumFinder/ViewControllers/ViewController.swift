@@ -9,16 +9,15 @@
 import UIKit
 import AlbumSDK
 
-final class ViewController: UIViewController {
+final class ViewController: BaseViewController {
 
-    public var isLoading: Bool = false
-    
+
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var tableView: UITableView!
     
     private let albumService = AlbumService()
-    private var viewDidAppeared: Bool = false
     private var foundAlbums: [AlbumInfo] = []
+    private var albumDetailsViewController: AlbumDetailsViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,23 +25,17 @@ final class ViewController: UIViewController {
         setupSubviews()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         if !viewDidAppeared {
             _ = self.searchBar.becomeFirstResponder()
         }
-        
-        viewDidAppeared = true
     }
     
     //MARK: - UI
     private func setupSubviews() {
         searchBar.placeholder = "Search Albums"
         searchBar.delegate = self
-        
-        tableView.delegate = self
-        tableView.dataSource = self
     }
 }
 
@@ -61,10 +54,9 @@ extension ViewController: UISearchBarDelegate {
             self.isLoading = true
             searchBar.resignFirstResponder()
             
-            
-            
             albumService.getSearchResult(withKeywords: keywords) { (result) in
                 
+                self.isLoading = false
                 DispatchQueue.main.async {
                     switch result {
                     case .failed(let error):
@@ -101,27 +93,37 @@ extension ViewController: UITableViewDataSource {
             return UITableViewCell(style: .subtitle, reuseIdentifier: cellId)
         }
     }
-}
-
-extension ViewController: UITableViewDelegate {
-    private func tableView(_ tableView: UITableView,
-                   willDisplay cell: UITableViewCell,
-                   forRowAt indexPath: IndexPath) {
+    
+    func updateUI(for indexPath: IndexPath,
+                    andCell cell: UITableViewCell) {
         if let albumInfo = findAlbum(with: indexPath) {
             cell.textLabel?.text = albumInfo.name
             cell.detailTextLabel?.text = albumInfo.artist
         }
     }
+}
+
+extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView,
+                   willDisplay cell: UITableViewCell,
+                   forRowAt indexPath: IndexPath) {
+        
+        updateUI(for: indexPath, andCell: cell)
+    }
     
-    private func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if let albumInfo = findAlbum(with: indexPath) {
             tableView.deselectRow(at: indexPath, animated: true)
-            
+            let detailsViewController = AlbumDetailsViewController(with: albumInfo)
+            navigationController?.pushViewController(detailsViewController, animated: true)
+//            present(albumDetailsViewController!, animated: true) {
+//                self.albumDetailsViewController?.view.backgroundColor = UIColor.white
+//            }
         }
     }
     
-    private func findAlbum(with indexPath: IndexPath) -> AlbumInfo? {
+    func findAlbum(with indexPath: IndexPath) -> AlbumInfo? {
         var albumDetails: AlbumInfo?
         let rowIndex = indexPath.row
         if rowIndex < self.foundAlbums.count {

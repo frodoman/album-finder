@@ -10,6 +10,9 @@
 		9ABE9ABF222ADF6A00306DD5 /* AlbumSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ABE9ABE222ADF6A00306DD5 /* AlbumSDK.framework */; };
 		9ABE9AC0222ADF6A00306DD5 /* AlbumSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9ABE9ABE222ADF6A00306DD5 /* AlbumSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9ABE9AC6222AF37600306DD5 /* AlbumDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABE9AC5222AF37600306DD5 /* AlbumDetailsViewController.swift */; };
+		9ABE9AC8222B39A500306DD5 /* UIView+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABE9AC7222B39A500306DD5 /* UIView+Common.swift */; };
+		9ABE9ACA222B3EED00306DD5 /* UIImageView+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABE9AC9222B3EED00306DD5 /* UIImageView+Common.swift */; };
+		9ABE9ACC222B4AEA00306DD5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABE9ACB222B4AEA00306DD5 /* BaseViewController.swift */; };
 		C9362F952227D7DA002A04A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9362F942227D7DA002A04A5 /* AppDelegate.swift */; };
 		C9362F972227D7DA002A04A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9362F962227D7DA002A04A5 /* ViewController.swift */; };
 		C9362F9A2227D7DA002A04A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9362F982227D7DA002A04A5 /* Main.storyboard */; };
@@ -45,6 +48,9 @@
 /* Begin PBXFileReference section */
 		9ABE9ABE222ADF6A00306DD5 /* AlbumSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AlbumSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ABE9AC5222AF37600306DD5 /* AlbumDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsViewController.swift; sourceTree = "<group>"; };
+		9ABE9AC7222B39A500306DD5 /* UIView+Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Common.swift"; sourceTree = "<group>"; };
+		9ABE9AC9222B3EED00306DD5 /* UIImageView+Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Common.swift"; sourceTree = "<group>"; };
+		9ABE9ACB222B4AEA00306DD5 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		C9362F912227D7DA002A04A5 /* AlbumFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlbumFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9362F942227D7DA002A04A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9362F962227D7DA002A04A5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +86,8 @@
 		9ABE9AC1222AEADB00306DD5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9ABE9AC7222B39A500306DD5 /* UIView+Common.swift */,
+				9ABE9AC9222B3EED00306DD5 /* UIImageView+Common.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -89,6 +97,7 @@
 			children = (
 				C9362F962227D7DA002A04A5 /* ViewController.swift */,
 				9ABE9AC5222AF37600306DD5 /* AlbumDetailsViewController.swift */,
+				9ABE9ACB222B4AEA00306DD5 /* BaseViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -262,9 +271,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9ABE9ACA222B3EED00306DD5 /* UIImageView+Common.swift in Sources */,
 				C9362F972227D7DA002A04A5 /* ViewController.swift in Sources */,
 				9ABE9AC6222AF37600306DD5 /* AlbumDetailsViewController.swift in Sources */,
 				C9362F952227D7DA002A04A5 /* AppDelegate.swift in Sources */,
+				9ABE9AC8222B39A500306DD5 /* UIView+Common.swift in Sources */,
+				9ABE9ACC222B4AEA00306DD5 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
