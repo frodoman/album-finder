@@ -104,18 +104,29 @@ extension ViewController: UITableViewDataSource {
 }
 
 extension ViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView,
+    private func tableView(_ tableView: UITableView,
                    willDisplay cell: UITableViewCell,
                    forRowAt indexPath: IndexPath) {
+        if let albumInfo = findAlbum(with: indexPath) {
+            cell.textLabel?.text = albumInfo.name
+            cell.detailTextLabel?.text = albumInfo.artist
+        }
+    }
+    
+    private func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if let albumInfo = findAlbum(with: indexPath) {
+            tableView.deselectRow(at: indexPath, animated: true)
+            
+        }
+    }
+    
+    private func findAlbum(with indexPath: IndexPath) -> AlbumInfo? {
         var albumDetails: AlbumInfo?
         let rowIndex = indexPath.row
         if rowIndex < self.foundAlbums.count {
             albumDetails = self.foundAlbums[rowIndex]
         }
-        
-        if let albumInfo = albumDetails {
-            cell.textLabel?.text = albumInfo.name
-            cell.detailTextLabel?.text = albumInfo.artist
-        }
+        return albumDetails
     }
 }
