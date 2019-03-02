@@ -19,7 +19,7 @@ public class MockNetworkClient: NetworkClient {
     public private(set) var urlRequests: [URLRequest] = []
     public var mockedResult: RequestResult<Data>?
     
-    public func makeNetworkRequest(with request: URLRequest, completion: @escaping ((RequestResult<Data>) -> Void)) {
+    public func makeRequest(with request: URLRequest, completion: @escaping ((RequestResult<Data>) -> Void)) {
         
         urlRequests.append(request)
         

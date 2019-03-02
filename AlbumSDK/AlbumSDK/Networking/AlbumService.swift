@@ -38,7 +38,7 @@ public class AlbumService: ResponseHandler {
     
     public func getSearchResult(with request: URLRequest,
                                 completion: @escaping (RequestResult<ResponseType>) -> Void) {
-        self.client.makeNetworkRequest(with: request) { (result) in
+        self.client.makeRequest(with: request) { (result) in
             do {
                 let searchResponse: RequestResult<ResponseType> = .succeed(try self.decodeResponse(response: result))
                 completion(searchResponse)

@@ -22,7 +22,7 @@ public class DefaultNetworkClient: NetworkClient {
         self.session = session
     }
     
-    public func makeNetworkRequest(with request: URLRequest,
+    public func makeRequest(with request: URLRequest,
                                    completion: @escaping (RequestResult<(Data)>) -> Void) {
         session.startDataTask(with: request,
                               completionHandler: { (data, response, error) -> Void in

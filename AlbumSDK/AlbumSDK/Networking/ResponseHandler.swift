@@ -18,7 +18,7 @@ public enum RequestResult<ResponseType> {
 public protocol ResponseHandler {
     associatedtype ResponseType
     
-    // Convert the raw data into a decodable object
+    // Convert the raw data (from the network session) into a decodable object
     func decodeResponse<ResponseType: Decodable>(response: RequestResult<Data>) throws -> ResponseType
 }
 

@@ -9,7 +9,7 @@
 import Foundation
 
 public protocol NetworkClient {
-    func makeNetworkRequest(with request: URLRequest,
-                            completion: @escaping (RequestResult<(Data)>) -> Void)
+    func makeRequest(with request: URLRequest,
+                     completion: @escaping (RequestResult<(Data)>) -> Void)
 }
 
