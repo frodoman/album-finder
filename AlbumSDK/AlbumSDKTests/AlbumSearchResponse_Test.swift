@@ -19,7 +19,7 @@ final class AlbumSearchResponse_Test: XCTestCase {
             
             mockClient.mockedResult = .succeed(jsonData)
             
-            service.getSearchResult(with: keywords) { ( result) in
+            service.getSearchResult(withKeywords: keywords) { ( result) in
                 switch result {
                 case .failed( let error):
                     XCTAssertNotNil(error)

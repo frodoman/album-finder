@@ -21,7 +21,7 @@ class AlbumService_Test: XCTestCase {
         let jsonData = data(forJsonFile: "search-result-response-hello-normal")!
         mockClient.mockedResult = .succeed(jsonData)
         
-        service.getSearchResult(with: keywords) { ( result) in
+        service.getSearchResult(withKeywords: keywords) { ( result) in
             switch result {
             case .failed( let error):
                 XCTFail("Failed to get search response: \(error)")
@@ -31,7 +31,7 @@ class AlbumService_Test: XCTestCase {
         }
         
         mockClient.mockedResult = nil
-        service.getSearchResult(with: keywords) { ( result) in
+        service.getSearchResult(withKeywords: keywords) { ( result) in
             switch result {
             case .failed( let error):
                 XCTAssertNotNil(error)
@@ -52,7 +52,7 @@ class AlbumService_Test: XCTestCase {
             
             mockSession.completionResult = (responseData, URLResponse(), nil)
 
-            service.getSearchResult(with: "today") { ( result) in
+            service.getSearchResult(withKeywords: "today") { ( result) in
                 switch result {
                 case .failed( let error):
                     XCTAssertNotNil(error)
@@ -62,7 +62,7 @@ class AlbumService_Test: XCTestCase {
             }
             
             mockSession.completionResult = (nil, URLResponse(), NetworkErrors.genaric)
-            service.getSearchResult(with: "one") { ( result) in
+            service.getSearchResult(withKeywords: "one") { ( result) in
                 switch result {
                 case .failed( let error):
                     XCTAssertNotNil(error)
@@ -72,7 +72,7 @@ class AlbumService_Test: XCTestCase {
             }
             
             mockSession.completionResult = (nil, URLResponse(), nil)
-            service.getSearchResult(with: "two") { ( result) in
+            service.getSearchResult(withKeywords: "two") { ( result) in
                 switch result {
                 case .failed( let error):
                     XCTAssertNotNil(error)

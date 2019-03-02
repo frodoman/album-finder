@@ -9,7 +9,7 @@
 import Foundation
 
 public enum AlbumAccount {
-    public static let apiRoot = "http://ws.audioscrobbler.com/2.0/"
+    public static let apiRoot = "https://ws.audioscrobbler.com/2.0/"
     public static let apiKey = "ee24253219aeeeadb26ed0033ca1b1e2"
     public static let apiMethod = "album.search"
     public static let apiFormat = "json"
@@ -27,7 +27,7 @@ public class AlbumService: ResponseHandler {
         self.client = client
     }
     
-    public func getSearchResult(with keywords: String,
+    public func getSearchResult(withKeywords keywords: String,
                     completion: @escaping (RequestResult<ResponseType>) -> Void) {
         if let url = URLFactory.makeUrl(with: keywords) {
             let request = URLRequest(url: URL(string: url)!)
