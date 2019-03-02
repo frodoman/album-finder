@@ -75,6 +75,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9ABE9AC1222AEADB00306DD5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9ABE9AC2222AEAE600306DD5 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C9362F962227D7DA002A04A5 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9ABE9AC3222AEAF100306DD5 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				C9362F942227D7DA002A04A5 /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		9ABE9AC4222AEB0000306DD5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C9362F982227D7DA002A04A5 /* Main.storyboard */,
+				C9362F9B2227D7DA002A04A5 /* Assets.xcassets */,
+				C9362F9D2227D7DA002A04A5 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		C9362F882227D7DA002A04A5 = {
 			isa = PBXGroup;
 			children = (
@@ -98,12 +131,11 @@
 		C9362F932227D7DA002A04A5 /* AlbumFinder */ = {
 			isa = PBXGroup;
 			children = (
-				C9362F942227D7DA002A04A5 /* AppDelegate.swift */,
-				C9362F962227D7DA002A04A5 /* ViewController.swift */,
-				C9362F982227D7DA002A04A5 /* Main.storyboard */,
-				C9362F9B2227D7DA002A04A5 /* Assets.xcassets */,
-				C9362F9D2227D7DA002A04A5 /* LaunchScreen.storyboard */,
 				C9362FA02227D7DA002A04A5 /* Info.plist */,
+				9ABE9AC4222AEB0000306DD5 /* Resources */,
+				9ABE9AC3222AEAF100306DD5 /* App */,
+				9ABE9AC2222AEAE600306DD5 /* ViewControllers */,
+				9ABE9AC1222AEADB00306DD5 /* Views */,
 			);
 			path = AlbumFinder;
 			sourceTree = "<group>";
