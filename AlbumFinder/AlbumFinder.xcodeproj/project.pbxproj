@@ -13,6 +13,9 @@
 		9ABE9AC8222B39A500306DD5 /* UIView+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABE9AC7222B39A500306DD5 /* UIView+Common.swift */; };
 		9ABE9ACA222B3EED00306DD5 /* UIImageView+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABE9AC9222B3EED00306DD5 /* UIImageView+Common.swift */; };
 		9ABE9ACC222B4AEA00306DD5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABE9ACB222B4AEA00306DD5 /* BaseViewController.swift */; };
+		9ABE9ACE222BEA9000306DD5 /* SearchResultScreen_Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABE9ACD222BEA9000306DD5 /* SearchResultScreen_Test.swift */; };
+		9ABE9AD0222BEBB700306DD5 /* AccessibilityIDs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABE9ACF222BEBB700306DD5 /* AccessibilityIDs.swift */; };
+		9ABE9AD1222BEED000306DD5 /* AccessibilityIDs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABE9ACF222BEBB700306DD5 /* AccessibilityIDs.swift */; };
 		C9362F952227D7DA002A04A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9362F942227D7DA002A04A5 /* AppDelegate.swift */; };
 		C9362F972227D7DA002A04A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9362F962227D7DA002A04A5 /* ViewController.swift */; };
 		C9362F9A2227D7DA002A04A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9362F982227D7DA002A04A5 /* Main.storyboard */; };
@@ -51,6 +54,8 @@
 		9ABE9AC7222B39A500306DD5 /* UIView+Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Common.swift"; sourceTree = "<group>"; };
 		9ABE9AC9222B3EED00306DD5 /* UIImageView+Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Common.swift"; sourceTree = "<group>"; };
 		9ABE9ACB222B4AEA00306DD5 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		9ABE9ACD222BEA9000306DD5 /* SearchResultScreen_Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultScreen_Test.swift; sourceTree = "<group>"; };
+		9ABE9ACF222BEBB700306DD5 /* AccessibilityIDs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityIDs.swift; sourceTree = "<group>"; };
 		C9362F912227D7DA002A04A5 /* AlbumFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlbumFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9362F942227D7DA002A04A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9362F962227D7DA002A04A5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +93,7 @@
 			children = (
 				9ABE9AC7222B39A500306DD5 /* UIView+Common.swift */,
 				9ABE9AC9222B3EED00306DD5 /* UIImageView+Common.swift */,
+				9ABE9ACF222BEBB700306DD5 /* AccessibilityIDs.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -156,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				C9362FA92227D7DB002A04A5 /* AlbumFinderUITests.swift */,
+				9ABE9ACD222BEA9000306DD5 /* SearchResultScreen_Test.swift */,
 				C9362FAB2227D7DB002A04A5 /* Info.plist */,
 			);
 			path = AlbumFinderUITests;
@@ -272,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9ABE9ACA222B3EED00306DD5 /* UIImageView+Common.swift in Sources */,
+				9ABE9AD0222BEBB700306DD5 /* AccessibilityIDs.swift in Sources */,
 				C9362F972227D7DA002A04A5 /* ViewController.swift in Sources */,
 				9ABE9AC6222AF37600306DD5 /* AlbumDetailsViewController.swift in Sources */,
 				C9362F952227D7DA002A04A5 /* AppDelegate.swift in Sources */,
@@ -284,7 +292,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9ABE9ACE222BEA9000306DD5 /* SearchResultScreen_Test.swift in Sources */,
 				C9362FAA2227D7DB002A04A5 /* AlbumFinderUITests.swift in Sources */,
+				9ABE9AD1222BEED000306DD5 /* AccessibilityIDs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

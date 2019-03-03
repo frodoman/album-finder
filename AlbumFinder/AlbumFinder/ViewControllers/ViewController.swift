@@ -37,6 +37,8 @@ final class ViewController: BaseViewController {
     private func setupSubviews() {
         searchBar.placeholder = "Search Albums"
         searchBar.delegate = self
+        searchBar.accessibilityIdentifier = AccessibilityIDs.mainSearhBar
+        tableView.accessibilityIdentifier = AccessibilityIDs.mainTableView
     }
 }
 
@@ -101,6 +103,7 @@ extension ViewController: UITableViewDataSource {
         if let albumInfo = findAlbum(with: indexPath) {
             cell.textLabel?.text = albumInfo.name
             cell.detailTextLabel?.text = albumInfo.artist
+            cell.accessibilityIdentifier = AccessibilityIDs.mainTableViewCell + ".\(indexPath.row)"
         }
     }
 }

@@ -25,10 +25,11 @@ extension UIView {
         maskView.backgroundColor = UIColor.black.withAlphaComponent(0.7)
         maskView.tag = ConstViewTagMask
         maskView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        
+        maskView.accessibilityIdentifier = AccessibilityIDs.spinnerMask
         self.addSubview(maskView)
         
         let spinner = UIActivityIndicatorView.init(style: .whiteLarge)
+        spinner.accessibilityIdentifier = AccessibilityIDs.spinner
         spinner.tag = ConstViewTagSpinner
         spinner.center = maskView.center;
         spinner.startAnimating()
