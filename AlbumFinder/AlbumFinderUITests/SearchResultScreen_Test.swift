@@ -75,8 +75,47 @@ class SearchResultScreen_Test: XCTestCase {
         
     }
     
-    func testMoreInfoButton() {
+    func testSearchResultTableScrolling() {
+
+        let app = XCUIApplication()
+        enter(key: "H")
+        enter(key: "e")
+        enter(key: "l")
+        enter(key: "l")
+        enter(key: "o")
+        app/*@START_MENU_TOKEN@*/.buttons["Search"]/*[[".keyboards.buttons[\"Search\"]",".buttons[\"Search\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         
+        // first table view cell should exist
+        let firstCell = app.cells[AccessibilityIDs.mainTableViewCell + ".0"]
+        waitForElement(element: firstCell, toAppear: true)
+        XCTAssertTrue(firstCell.exists)
+        
+        app.swipeUp()
+        let endCell = app.cells[AccessibilityIDs.mainTableViewCell + ".20"]
+        scrollToElement(element: endCell)
+        XCTAssertTrue(endCell.exists)
     }
     
+    func testSearchWithoutNetwork() {
+        /*
+         // uncomment this when testing on a
+         // real device
+        let settingsApp = XCUIApplication(bundleIdentifier: "com.apple.Preferences")
+        settingsApp.launch()
+        settingsApp.tables.cells["Airplane Mode"].tap()
+        
+        let app = XCUIApplication()
+        enter(key: "H")
+        enter(key: "e")
+        enter(key: "l")
+        enter(key: "l")
+        enter(key: "o")
+        app/*@START_MENU_TOKEN@*/.buttons["Search"]/*[[".keyboards.buttons[\"Search\"]",".buttons[\"Search\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
+        // first table view cell should exist
+        let firstCell = app.cells[AccessibilityIDs.mainTableViewCell + ".0"]
+        waitForElement(element: firstCell, toAppear: true)
+        XCTAssertFalse(firstCell.exists)
+ */
+    }
 }
