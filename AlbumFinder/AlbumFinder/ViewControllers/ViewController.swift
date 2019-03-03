@@ -8,6 +8,7 @@
 
 import UIKit
 import AlbumSDK
+import os
 
 final class ViewController: BaseViewController {
 
@@ -53,17 +54,18 @@ extension ViewController: UISearchBarDelegate {
             
             self.isLoading = true
             searchBar.resignFirstResponder()
-            
-            albumService.getSearchResult(withKeywords: keywords) { (result) in
+            self.view.showWaitingAnimation()
+            albumService.getSearchResult(withKeywords: keywords) { [weak self] (result) in
                 
-                self.isLoading = false
+                self?.isLoading = false
                 DispatchQueue.main.async {
+                    self?.view.hideWaitingAnimation()
                     switch result {
                     case .failed(let error):
-                        print(error)
+                        print("Failed to get album search result: \(error)")
                     case .succeed(let response):
-                        self.foundAlbums = response.results.albummatches?.album ?? []
-                        self.tableView.reloadData()
+                        self?.foundAlbums = response.results.albummatches?.album ?? []
+                        self?.tableView.reloadData()
                     }
                 }
             }
@@ -117,9 +119,6 @@ extension ViewController: UITableViewDelegate {
             tableView.deselectRow(at: indexPath, animated: true)
             let detailsViewController = AlbumDetailsViewController(with: albumInfo)
             navigationController?.pushViewController(detailsViewController, animated: true)
-//            present(albumDetailsViewController!, animated: true) {
-//                self.albumDetailsViewController?.view.backgroundColor = UIColor.white
-//            }
         }
     }
     
