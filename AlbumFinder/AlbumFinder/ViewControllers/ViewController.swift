@@ -90,12 +90,14 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellId = "AlbumTableViewCell"
-        if let cell = tableView.dequeueReusableCell(withIdentifier: cellId) {
-            return cell
+        var cell : UITableViewCell?
+        if let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: cellId) {
+            cell = dequeuedCell
         }
         else {
-            return UITableViewCell(style: .subtitle, reuseIdentifier: cellId)
+            cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellId)
         }
+        return cell!
     }
     
     func updateUI(for indexPath: IndexPath,

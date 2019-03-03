@@ -53,5 +53,30 @@ class SearchResultScreen_Test: XCTestCase {
         let firstCell = app.cells[AccessibilityIDs.mainTableViewCell + ".0"]
         waitForElement(element: firstCell, toAppear: true)
         XCTAssertTrue(firstCell.exists)
+        
+        // tap on the first cell,
+        // should show the album details view
+        firstCell.tap()
+        
+        let scrollViewsQuery = app.scrollViews
+        let imageView =  scrollViewsQuery.otherElements.containing(.image, identifier:AccessibilityIDs.detailsImage).element
+        waitForElement(element: imageView , toAppear: true)
+        XCTAssertTrue(imageView.exists)
+        
+        let elementsQuery = scrollViewsQuery.otherElements
+        XCTAssertTrue(elementsQuery.staticTexts[AccessibilityIDs.detailsName].exists)
+        
+        let buttonMoreInfo = elementsQuery.buttons[AccessibilityIDs.detailsButton]
+        XCTAssertTrue(buttonMoreInfo.exists)
+        buttonMoreInfo.tap()
+        
+        let webViewQuery = app.webViews
+        XCTAssertTrue(webViewQuery.count > 0)
+        
     }
+    
+    func testMoreInfoButton() {
+        
+    }
+    
 }
