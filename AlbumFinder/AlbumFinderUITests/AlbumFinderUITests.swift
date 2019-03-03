@@ -35,14 +35,23 @@ class AlbumFinderUITests: XCTestCase {
 
 
 extension XCTestCase {
-    public func waitForElementToAppear(element: XCUIElement, file: String = #file, line: UInt = #line) {
-        let existsPredicate = NSPredicate(format: "exists == true")
-        expectation(for: existsPredicate, evaluatedWith: element, handler: nil)
-    
+    public func waitForElement(element: XCUIElement,
+                               toAppear: Bool,
+                               file: String = #file,
+                               line: UInt = #line) {
+        var existsPredicate = NSPredicate(format: "exists == false")
+        if toAppear {
+            existsPredicate = NSPredicate(format: "exists == true")
+        }
+        let expectation = self.expectation(for: existsPredicate, evaluatedWith: element, handler: nil)
+        
         waitForExpectations(timeout: 10) { (error) -> Void in
             if (error != nil) {
                 let message = "Failed to find \(element) after 10 seconds."
                 self.recordFailure(withDescription: message, inFile: file, atLine: Int(line), expected: true)
+            }
+            else {
+                expectation.fulfill()
             }
         }
     }

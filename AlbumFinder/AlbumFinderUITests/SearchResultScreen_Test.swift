@@ -25,34 +25,33 @@ class SearchResultScreen_Test: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func testSearchUI() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func testSearchKeyword_Yes() {
         
         let app = XCUIApplication()
-        let hKey = app/*@START_MENU_TOKEN@*/.keys["H"]/*[[".keyboards.keys[\"H\"]",".keys[\"H\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
-        hKey.tap()
+        
+        // search bar is there
+        let searchBar = app.otherElements[AccessibilityIDs.mainSearhBar]
+        XCTAssertTrue(searchBar.exists)
+        
+        // table view is ther
+        let tableView = app.tables[AccessibilityIDs.mainTableView]
+        XCTAssertTrue(tableView.exists)
+        
+        // enter Yes into the search bar
+        let yKey = app/*@START_MENU_TOKEN@*/.keys["Y"]/*[[".keyboards.keys[\"Y\"]",".keys[\"Y\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        yKey.tap()
         
         let eKey = app/*@START_MENU_TOKEN@*/.keys["e"]/*[[".keyboards.keys[\"e\"]",".keys[\"e\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
         eKey.tap()
-        eKey.tap()
         
-        let lKey = app/*@START_MENU_TOKEN@*/.keys["l"]/*[[".keyboards.keys[\"l\"]",".keys[\"l\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
-        lKey.tap()
-        lKey.tap()
-        lKey.tap()
-        
-        let oKey = app/*@START_MENU_TOKEN@*/.keys["o"]/*[[".keyboards.keys[\"o\"]",".keys[\"o\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
-        oKey.tap()
-        oKey.tap()
-        
-        let firstCell = app.staticTexts[AccessibilityIDs.mainTableViewCell + ".0"]
-        XCTAssertFalse(firstCell.exists)
-        
+        let sKey = app/*@START_MENU_TOKEN@*/.keys["s"]/*[[".keyboards.keys[\"s\"]",".keys[\"s\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        sKey.tap()
         app/*@START_MENU_TOKEN@*/.buttons["Search"]/*[[".keyboards.buttons[\"Search\"]",".buttons[\"Search\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        waitForElementToAppear(element: firstCell)
+        
+        // first table view cell should exist
+        let firstCell = app.cells[AccessibilityIDs.mainTableViewCell + ".0"]
+        waitForElement(element: firstCell, toAppear: true)
         XCTAssertTrue(firstCell.exists)
     }
-
 }
