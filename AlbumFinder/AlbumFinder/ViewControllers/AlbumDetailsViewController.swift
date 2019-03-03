@@ -38,6 +38,7 @@ final class AlbumDetailsViewController: BaseViewController {
         infoButton.setTitleColor(UIColor.black, for: .normal)
         infoButton.heightAnchor.constraint(equalToConstant: 64.0).isActive = true
         infoButton.addTarget(self, action: #selector(buttonMoreInfoTapped), for: .touchUpInside)
+        infoButton.accessibilityIdentifier = AccessibilityIDs.detailsButton
         
         return infoButton
     }()
@@ -81,6 +82,7 @@ final class AlbumDetailsViewController: BaseViewController {
             imageView.contentMode = .scaleAspectFit
             imageView.imageFrom(urlString: imgUrl)
             imageView.heightAnchor.constraint(equalToConstant: 400.0).isActive = true
+            imageView.accessibilityIdentifier = AccessibilityIDs.detailsImage
             
             self.mainStackView.addArrangedSubview(imageView)
         }
@@ -92,6 +94,7 @@ final class AlbumDetailsViewController: BaseViewController {
             label.font = UIFont.systemFont(ofSize: 20.0)
             label.text = "Artist: " + artist
             label.textAlignment = .center
+            label.accessibilityIdentifier = AccessibilityIDs.detailsName
             self.mainStackView.addArrangedSubview(label)
         }
         
