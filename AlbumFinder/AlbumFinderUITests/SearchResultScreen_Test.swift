@@ -30,6 +30,9 @@ class SearchResultScreen_Test: XCTestCase {
         
         let app = XCUIApplication()
         
+        //wait for the UI to load
+        sleep(2)
+        
         // search bar is there
         let searchBar = app.otherElements[AccessibilityIDs.mainSearhBar]
         XCTAssertTrue(searchBar.exists)
@@ -39,15 +42,8 @@ class SearchResultScreen_Test: XCTestCase {
         XCTAssertTrue(tableView.exists)
         
         // enter Yes into the search bar
-        let yKey = app/*@START_MENU_TOKEN@*/.keys["Y"]/*[[".keyboards.keys[\"Y\"]",".keys[\"Y\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
-        yKey.tap()
-        
-        let eKey = app/*@START_MENU_TOKEN@*/.keys["e"]/*[[".keyboards.keys[\"e\"]",".keys[\"e\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
-        eKey.tap()
-        
-        let sKey = app/*@START_MENU_TOKEN@*/.keys["s"]/*[[".keyboards.keys[\"s\"]",".keys[\"s\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
-        sKey.tap()
-        app/*@START_MENU_TOKEN@*/.buttons["Search"]/*[[".keyboards.buttons[\"Search\"]",".buttons[\"Search\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        searchBar.typeText("Yes")
+        searchBar.typeText("\n")
         
         // first table view cell should exist
         let firstCell = app.cells[AccessibilityIDs.mainTableViewCell + ".0"]
@@ -70,20 +66,23 @@ class SearchResultScreen_Test: XCTestCase {
         XCTAssertTrue(buttonMoreInfo.exists)
         buttonMoreInfo.tap()
         
-        let webViewQuery = app.webViews
-        XCTAssertTrue(webViewQuery.count > 0)
+        sleep(2)
+        let webView = app.webViews.firstMatch
+        XCTAssertNotNil(webView)
         
     }
     
     func testSearchResultTableScrolling() {
 
         let app = XCUIApplication()
-        enter(key: "H")
-        enter(key: "e")
-        enter(key: "l")
-        enter(key: "l")
-        enter(key: "o")
-        app/*@START_MENU_TOKEN@*/.buttons["Search"]/*[[".keyboards.buttons[\"Search\"]",".buttons[\"Search\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        sleep(2)
+        
+        let searchBar = app.otherElements[AccessibilityIDs.mainSearhBar]
+        XCTAssertTrue(searchBar.exists)
+        
+        // enter Hello into the search bar
+        searchBar.typeText("Hello")
+        searchBar.typeText("\n")
         
         // first table view cell should exist
         let firstCell = app.cells[AccessibilityIDs.mainTableViewCell + ".0"]
@@ -105,12 +104,13 @@ class SearchResultScreen_Test: XCTestCase {
         settingsApp.tables.cells["Airplane Mode"].tap()
         
         let app = XCUIApplication()
-        enter(key: "H")
-        enter(key: "e")
-        enter(key: "l")
-        enter(key: "l")
-        enter(key: "o")
-        app/*@START_MENU_TOKEN@*/.buttons["Search"]/*[[".keyboards.buttons[\"Search\"]",".buttons[\"Search\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+         sleep(2)
+         let searchBar = app.otherElements[AccessibilityIDs.mainSearhBar]
+         XCTAssertTrue(searchBar.exists)
+         
+         // enter Hello into the search bar
+         searchBar.typeText("Hello")
+         searchBar.typeText("\n")
         
         // first table view cell should exist
         let firstCell = app.cells[AccessibilityIDs.mainTableViewCell + ".0"]
