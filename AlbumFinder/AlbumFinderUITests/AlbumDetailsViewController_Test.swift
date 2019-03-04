@@ -19,8 +19,7 @@ class AlbumDetailsViewController_Test: XCTestCase {
     }
 
     func testInitWitCoder() {
-        //let detailsView = AlbumDetailsViewController(coder: NSCoder())
-        //XCTAssertNil(detailsView)
+
     }
 
 }
