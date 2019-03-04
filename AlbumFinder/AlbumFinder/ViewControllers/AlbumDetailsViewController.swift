@@ -63,7 +63,6 @@ final class AlbumDetailsViewController: BaseViewController {
     
     //MARK: - UI
     private func setupSubviews() {
-        //self.view.translatesAutoresizingMaskIntoConstraints = false
         self.view.backgroundColor = UIColor.white
         self.title = albumInfo.name
         

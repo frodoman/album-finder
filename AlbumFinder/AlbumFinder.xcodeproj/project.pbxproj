@@ -22,6 +22,7 @@
 		C9362F9C2227D7DA002A04A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9362F9B2227D7DA002A04A5 /* Assets.xcassets */; };
 		C9362F9F2227D7DA002A04A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9362F9D2227D7DA002A04A5 /* LaunchScreen.storyboard */; };
 		C9362FAA2227D7DB002A04A5 /* AlbumFinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9362FA92227D7DB002A04A5 /* AlbumFinderUITests.swift */; };
+		C95B2C8D222D190F00FEFB0D /* DesignConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95B2C8C222D190F00FEFB0D /* DesignConst.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		C9362FA92227D7DB002A04A5 /* AlbumFinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumFinderUITests.swift; sourceTree = "<group>"; };
 		C9362FAB2227D7DB002A04A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9362FB52227D83C002A04A5 /* AlbumSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AlbumSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C95B2C8C222D190F00FEFB0D /* DesignConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignConst.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				9ABE9AC7222B39A500306DD5 /* UIView+Common.swift */,
 				9ABE9AC9222B3EED00306DD5 /* UIImageView+Common.swift */,
 				9ABE9ACF222BEBB700306DD5 /* AccessibilityIDs.swift */,
+				C95B2C8C222D190F00FEFB0D /* DesignConst.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				C9362F972227D7DA002A04A5 /* ViewController.swift in Sources */,
 				9ABE9AC6222AF37600306DD5 /* AlbumDetailsViewController.swift in Sources */,
 				C9362F952227D7DA002A04A5 /* AppDelegate.swift in Sources */,
+				C95B2C8D222D190F00FEFB0D /* DesignConst.swift in Sources */,
 				9ABE9AC8222B39A500306DD5 /* UIView+Common.swift in Sources */,
 				9ABE9ACC222B4AEA00306DD5 /* BaseViewController.swift in Sources */,
 			);
