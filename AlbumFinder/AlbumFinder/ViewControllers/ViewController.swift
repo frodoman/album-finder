@@ -47,27 +47,25 @@ extension ViewController: UISearchBarDelegate {
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
-        if self.isLoading {
-            return
-        }
-        
-        if let keywords = searchBar.text,
-            !keywords.isEmpty {
-            
-            self.isLoading = true
-            searchBar.resignFirstResponder()
-            self.view.showWaitingAnimation()
-            albumService.getSearchResult(withKeywords: keywords) { [weak self] (result) in
+        if !self.isLoading {
+            if let keywords = searchBar.text,
+                !keywords.isEmpty {
                 
-                self?.isLoading = false
-                DispatchQueue.main.async {
-                    self?.view.hideWaitingAnimation()
-                    switch result {
-                    case .failed(let error):
-                        print("Failed to get album search result: \(error)")
-                    case .succeed(let response):
-                        self?.foundAlbums = response.results.albummatches?.album ?? []
-                        self?.tableView.reloadData()
+                self.isLoading = true
+                searchBar.resignFirstResponder()
+                self.view.showWaitingAnimation()
+                albumService.getSearchResult(withKeywords: keywords) { [weak self] (result) in
+                    
+                    self?.isLoading = false
+                    DispatchQueue.main.async {
+                        self?.view.hideWaitingAnimation()
+                        switch result {
+                        case .failed(let error):
+                            print("Failed to get album search result: \(error)")
+                        case .succeed(let response):
+                            self?.foundAlbums = response.results.albummatches?.album ?? []
+                            self?.tableView.reloadData()
+                        }
                     }
                 }
             }
