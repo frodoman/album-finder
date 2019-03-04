@@ -35,6 +35,7 @@ final class ViewController: BaseViewController {
     
     //MARK: - UI
     private func setupSubviews() {
+        self.title = "Album Finder"
         searchBar.placeholder = "Search Albums"
         searchBar.delegate = self
         searchBar.accessibilityIdentifier = AccessibilityIDs.mainSearhBar
