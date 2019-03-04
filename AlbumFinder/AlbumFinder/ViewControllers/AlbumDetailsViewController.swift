@@ -18,7 +18,7 @@ final class AlbumDetailsViewController: BaseViewController {
         let stackView = UIStackView(frame: .zero)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
-        stackView.spacing = 16.0
+        stackView.spacing = DesignConst.Margins.normal
         return stackView
     }()
     
@@ -34,7 +34,7 @@ final class AlbumDetailsViewController: BaseViewController {
         let infoButton = UIButton(frame: .zero)
         infoButton.translatesAutoresizingMaskIntoConstraints = false
         infoButton.setTitle("More Information", for: .normal)
-        infoButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 23.0)
+        infoButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: DesignConst.Fonts.medium)
         infoButton.setTitleColor(UIColor.black, for: .normal)
         infoButton.heightAnchor.constraint(equalToConstant: 64.0).isActive = true
         infoButton.addTarget(self, action: #selector(buttonMoreInfoTapped), for: .touchUpInside)
@@ -80,7 +80,7 @@ final class AlbumDetailsViewController: BaseViewController {
             imageView.translatesAutoresizingMaskIntoConstraints = false
             imageView.contentMode = .scaleAspectFit
             imageView.imageFrom(urlString: imgUrl)
-            imageView.heightAnchor.constraint(equalToConstant: 400.0).isActive = true
+            imageView.heightAnchor.constraint(equalToConstant: DesignConst.Margins.imageHeight).isActive = true
             imageView.accessibilityIdentifier = AccessibilityIDs.detailsImage
             
             self.mainStackView.addArrangedSubview(imageView)
@@ -90,7 +90,7 @@ final class AlbumDetailsViewController: BaseViewController {
         if let artist = self.albumInfo.artist {
             let label = UILabel(frame: .zero)
             label.translatesAutoresizingMaskIntoConstraints = false
-            label.font = UIFont.systemFont(ofSize: 20.0)
+            label.font = UIFont.systemFont(ofSize: DesignConst.Fonts.medium)
             label.text = "Artist: " + artist
             label.textAlignment = .center
             label.accessibilityIdentifier = AccessibilityIDs.detailsName
