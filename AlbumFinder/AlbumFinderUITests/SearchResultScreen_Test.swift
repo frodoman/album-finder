@@ -95,27 +95,28 @@ class SearchResultScreen_Test: XCTestCase {
         XCTAssertTrue(endCell.exists)
     }
     
+    /*
+    // uncomment this when testing on a
+    // real device
+     
     func testSearchWithoutNetwork() {
-        /*
-         // uncomment this when testing on a
-         // real device
         let settingsApp = XCUIApplication(bundleIdentifier: "com.apple.Preferences")
         settingsApp.launch()
         settingsApp.tables.cells["Airplane Mode"].tap()
-        
+
         let app = XCUIApplication()
-         sleep(2)
-         let searchBar = app.otherElements[AccessibilityIDs.mainSearhBar]
-         XCTAssertTrue(searchBar.exists)
-         
-         // enter Hello into the search bar
-         searchBar.typeText("Hello")
-         searchBar.typeText("\n")
-        
+        sleep(2)
+        let searchBar = app.otherElements[AccessibilityIDs.mainSearhBar]
+        XCTAssertTrue(searchBar.exists)
+
+        // enter Hello into the search bar
+        searchBar.typeText("Hello")
+        searchBar.typeText("\n")
+
         // first table view cell should exist
         let firstCell = app.cells[AccessibilityIDs.mainTableViewCell + ".0"]
         waitForElement(element: firstCell, toAppear: true)
         XCTAssertFalse(firstCell.exists)
- */
     }
+    */
 }
