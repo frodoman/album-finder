@@ -1,6 +1,6 @@
 # Album Finder
 
-This is an iOS demo app allowing user to search albums using the Last.fm API.
+This is an iOS demo app allowing user to search albums using API from one of the big player.
 
 # Implementation: 
 This project is developed by 100% native codes using Swift 4.2 and Xcode 10.1. 
@@ -12,10 +12,3 @@ This project is developed by 100% native codes using Swift 4.2 and Xcode 10.1.
 3. Show details(image, artist and more info url) of the selected album.
 4. Show the related website of the album when 'More Information' is tapped.
 
-
-# Last.fm API
-The API is provided by Last.fm, the response data is in JSON format and the API documentation is provided below.
-API Key:
-1) Sign-up for a last.fm account at http://last.fm
-2) Go to: https://www.last.fm/api/account/create and create your API Key 
-3) Documentation can be viewed at: http://www.last.fm/api/show/album.search
