@@ -8,14 +8,15 @@ then click 'Test' from the drop down menu of the most top left section of Xcode.
 
 # Project Structure 
 There are two projects in this work space: 
-The 'AlbumSDK' consists of all the data model, logic and networking stuff; 
-While the 'AlbumFinder' has all the UI level codes (UIViews, view controllers...). 
+* 'AlbumSDK' consists of all the data model, logic and networking stuff; 
+* 'AlbumFinder' has all the UI level codes (UIViews, view controllers...). 
+
 Each project comes with a test target as well 
 (unit test for 'AlbumSDK' and UI test for 'AlbumFinder'). 
 
 # Test coverage (Last update on March 5, 2019) 
-100% for unit testing
-97.7% for UI testing
+* 100% for unit testing
+* 97.7% for UI testing
 
 # Implementation: 
 This project is developed using only native iOS frameworks 
