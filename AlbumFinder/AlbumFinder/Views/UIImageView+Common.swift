@@ -11,7 +11,8 @@ import UIKit
 
 extension UIImageView {
     
-    // fetch an image from the network 
+    // fetch an image from the network
+    // TODO: this part should go to the AlbumSDK.framework
     public func imageFrom(urlString: String) {
         if let url = URL(string: urlString) {
         
