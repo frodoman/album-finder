@@ -32,10 +32,16 @@ In this project you will find these iOS dev topics:
 * Fetching image from server 
 * Use of inheritance, extension, enum, protocol, genaric...
 
-Unit/UI test related: 
+Unit test related: 
 * Use mock objects, data/dependency injection to test networking without hinting the real server 
 * Use local Json files for unit testing
-* UI test implementation
+* Test error handling of networking function
+
+UI test related
+* UI test basic implementation
+* Entering text to a search bar 
+* Functions to wait until an XCUIElement is visible/hidden
+* Logic to scroll a table view till a certain cell is visible
 
 # This app allows users to 
 1. Enter keywords and hit 'Search'.
