@@ -114,8 +114,9 @@ final class AlbumDetailsViewController: BaseViewController {
     
     //MARK: - Actions
     @objc private func buttonMoreInfoTapped(_ sender: UIButton) {
-        if let infoUrl = self.albumInfo.url {
-            let webViewController = SFSafariViewController(url: URL(string: infoUrl)!)
+        if let infoUrl = self.albumInfo.url,
+           let url = URL(string: infoUrl) {
+            let webViewController = SFSafariViewController(url: url)
             present(webViewController, animated: true) {}
         }
     }
