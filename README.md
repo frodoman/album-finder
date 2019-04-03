@@ -1,5 +1,11 @@
 # Album Finder
-This is an iOS demo app allowing user to search albums using API from one of the big content provider.
+This is an iOS demo app allowing user to search albums using API from Last.fm
+
+# This app allows users to 
+1. Enter keywords and hit 'Search'.
+2. Browse album search result in a table view.
+3. View details(image, artist and more info url) of the selected album in a details view. 
+4. Visit the related website of the album when 'More Information' is tapped.
 
 # How to run
 Please open the AlbumFinder.xcworkspace file using Xcode 10.1 or later. 
@@ -14,15 +20,15 @@ There are two projects in this work space:
 Each project comes with a test target as well 
 (unit test for 'AlbumSDK' and UI test for 'AlbumFinder'). 
 
-# Test coverage (Last update on March 5, 2019) 
+# Test coverage (Last update on April 3, 2019) 
 * 100% for unit testing
-* 97.7% for UI testing
+* 98% for UI testing
 
 # Implementation: 
-This project is developed using only native iOS frameworks 
+This project is developed using native iOS frameworks only
 with Swift 4.2 and Xcode 10.1. 
 
-In this project you will find these iOS dev topics: 
+In this project you will find these iOS development topics: 
 * Creating dynamic frameworks to be shared by other projects
 * Creating work space to include multiple projects
 * Network request to download data from server
@@ -42,10 +48,3 @@ UI test related
 * Entering text to a search bar 
 * Functions to wait until an XCUIElement is visible/hidden
 * Logic to scroll a table view till a certain cell is visible
-
-# This app allows users to 
-1. Enter keywords and hit 'Search'.
-2. Show album search result in a table view.
-3. Show details(image, artist and more info url) of the selected album in a details view. 
-4. Show the related website of the album when 'More Information' is tapped.
-
