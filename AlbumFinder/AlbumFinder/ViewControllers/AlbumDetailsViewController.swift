@@ -75,7 +75,7 @@ final class AlbumDetailsViewController: BaseViewController {
     private func setupAlbumDetailView() {
         
         // add a photo
-        if let imgUrl = self.albumInfo.image?.first(where: {$0.size == .extralarge })?.text {
+        if let imgUrl = self.albumInfo.image.first(where: {$0.size == .extralarge })?.text {
             let imageView = UIImageView(frame: .zero)
             imageView.translatesAutoresizingMaskIntoConstraints = false
             imageView.contentMode = .scaleAspectFit
@@ -87,7 +87,7 @@ final class AlbumDetailsViewController: BaseViewController {
         }
         
         // add artist
-        if let artist = self.albumInfo.artist {
+        let artist = self.albumInfo.artist
             let label = UILabel(frame: .zero)
             label.translatesAutoresizingMaskIntoConstraints = false
             label.font = UIFont.systemFont(ofSize: DesignConst.Fonts.medium)
@@ -95,7 +95,6 @@ final class AlbumDetailsViewController: BaseViewController {
             label.textAlignment = .center
             label.accessibilityIdentifier = AccessibilityIDs.detailsName
             self.mainStackView.addArrangedSubview(label)
-        }
         
         // add a button for more information
         self.mainStackView.addArrangedSubview(buttonMoreInfo)
@@ -114,8 +113,8 @@ final class AlbumDetailsViewController: BaseViewController {
     
     //MARK: - Actions
     @objc private func buttonMoreInfoTapped(_ sender: UIButton) {
-        if let infoUrl = self.albumInfo.url,
-           let url = URL(string: infoUrl) {
+        let infoUrl = self.albumInfo.url
+        if let url = URL(string: infoUrl) {
             let webViewController = SFSafariViewController(url: url)
             present(webViewController, animated: true) {}
         }

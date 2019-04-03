@@ -64,7 +64,7 @@ extension ViewController: UISearchBarDelegate {
                         case .failed(let error):
                             print("Failed to get album search result: \(error)")
                         case .succeed(let response):
-                            self?.foundAlbums = response.results.albummatches?.album ?? []
+                            self?.foundAlbums = response.results.albummatches.album
                             self?.tableView.reloadData()
                         }
                     }

@@ -25,7 +25,7 @@ public struct SearchAttribute: Decodable {
         case searchTerm = "for"
     }
     
-    public var originKeywords: String?
+    public var originKeywords: String
     
     public init(from decoder: Decoder) throws {
         let jsonData = try decoder.container(keyedBy: CodingKeys.self)
@@ -44,12 +44,12 @@ public struct ResultDetails: Decodable {
         case albummatches
     }
     
-    public var query: QueryItem?
+    public var query: QueryItem
     public var totalResult: Int = 0
     public var startIndex: Int = 0
     public var itemPerPage: Int = 30
-    public var attr: SearchAttribute?
-    public var albummatches: AlbumMatchResult?
+    public var attr: SearchAttribute
+    public var albummatches: AlbumMatchResult
     
     public init(from decoder: Decoder) throws {
         let jsonData = try decoder.container(keyedBy: CodingKeys.self)
@@ -71,14 +71,14 @@ public struct ResultDetails: Decodable {
             itemPerPage = countPerPage
         }
         
-        albummatches = try? jsonData.decode(AlbumMatchResult.self, forKey: .albummatches)
+        albummatches = try jsonData.decode(AlbumMatchResult.self, forKey: .albummatches)
     }
     
 }
 
 public struct QueryItem: Decodable {
-    public var role: String?
-    public var searchTerms: String?
+    public var role: String
+    public var searchTerms: String
 }
 
 public struct AlbumMatchResult: Decodable {
@@ -87,11 +87,11 @@ public struct AlbumMatchResult: Decodable {
 
 public struct AlbumInfo: Decodable {
     public let name: String
-    public var artist: String?
-    public var url: String?
-    public var streamable: String?
-    public var mbid: String?
-    public var image: [AlbumImage]?
+    public var artist: String
+    public var url: String
+    public var streamable: String
+    public var mbid: String
+    public var image: [AlbumImage]
 }
 
 public struct AlbumImage: Decodable {
@@ -101,14 +101,8 @@ public struct AlbumImage: Decodable {
         case size
     }
     
-    public let text: String?
+    public let text: String
     public let size: AlbumImageSize
-    
-    public init(from decoder: Decoder) throws {
-        let jsonData = try decoder.container(keyedBy: CodingKeys.self)
-        text = try jsonData.decode(String.self, forKey: .text)
-        size = try jsonData.decode(AlbumImageSize.self, forKey: .size)
-    }
     
 }
 
