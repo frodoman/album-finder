@@ -30,11 +30,10 @@ class SearchResultScreen_Test: XCTestCase {
         
         let app = XCUIApplication()
         
-        //wait for the UI to load
-        sleep(2)
-        
         // search bar is there
         let searchBar = app.otherElements[AccessibilityIDs.mainSearhBar]
+        //wait for the UI to load
+        waitForElement(element: searchBar, toAppear: true)
         XCTAssertTrue(searchBar.exists)
         
         // table view is ther
@@ -66,8 +65,8 @@ class SearchResultScreen_Test: XCTestCase {
         XCTAssertTrue(buttonMoreInfo.exists)
         buttonMoreInfo.tap()
         
-        sleep(2)
         let webView = app.webViews.firstMatch
+        waitForElement(element: webView, toAppear: true)
         XCTAssertNotNil(webView)
         
     }
@@ -75,9 +74,9 @@ class SearchResultScreen_Test: XCTestCase {
     func testSearchResultTableScrolling() {
 
         let app = XCUIApplication()
-        sleep(2)
         
         let searchBar = app.otherElements[AccessibilityIDs.mainSearhBar]
+        waitForElement(element: searchBar, toAppear: true)
         XCTAssertTrue(searchBar.exists)
         
         // enter Hello into the search bar
