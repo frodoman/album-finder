@@ -7,6 +7,7 @@
 //
 
 import Foundation
+@testable import AlbumSDK
 
 public class MockNetworkSession: NSObject, NetworkSession {
     
